@@ -2,7 +2,7 @@ package server;
 import java.lang.*;
 import java.io.*;
 import java.net.*;
-
+/*clase servidor para probar la comunicacion TCP   */
 class Server {
    public static void main(String args[]) {
       String data = "Toobie ornaught toobie";

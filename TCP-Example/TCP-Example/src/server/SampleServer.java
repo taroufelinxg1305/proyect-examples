@@ -13,13 +13,13 @@ public class SampleServer {
 	static double longprom=0;
 	static int moduloPromedio=0;
     public static void main(String[] args) throws IOException {
-    	// Define que el socket escuchara en el puerto 9090
+    	// Define que el socket escuchara en el puerto 9091
         ServerSocket listener = new ServerSocket(9091);
         double[] promedios= new double[2];
         try {
             while (true) {
             	// Abre el socket y acepta las conexiones
-                Socket socket = listener.accept();
+                Socket socket = listener.accept(); //verifica si la conexion fu exitosa
                 System.out.print("Server has connected!\n");
 
                 try {
@@ -37,9 +37,10 @@ public class SampleServer {
                         
                         //System.out.println(input);
                      NmeatoJson.SepararToken(input);
-                     if(moduloPromedio==9)
+                     if(moduloPromedio==9) //cada 10 lineas leidas y enviadas por el cliente hace la operacion promedio
                      {
                     	 moduloPromedio=0;
+                    	 //trae el arreglo que almacena las ultimas 10 coordenadas
                     	 promedios= Operaciones.promedioCoor(NmeatoJson.getLastCoor());
                     	 latiprom=promedios[0];
                     	 longprom=promedios[1];

@@ -3,7 +3,7 @@ package client;
 import java.lang.*;
 import java.io.*;
 import java.net.*;
-
+/*clase cliente para probar la comunicacion TCP   */
 class Client {
 	public static void main(String args[]) {
 		try {
