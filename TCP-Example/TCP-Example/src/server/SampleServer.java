@@ -9,10 +9,13 @@ import java.net.Socket;
 
 public class SampleServer {
 
+	static double latiprom =0; //son los valores promedio que se enviaran en algun momento a la plataforma rutasBuses
+	static double longprom=0;
+	static int moduloPromedio=0;
     public static void main(String[] args) throws IOException {
     	// Define que el socket escuchara en el puerto 9090
         ServerSocket listener = new ServerSocket(9091);
-        
+        double[] promedios= new double[2];
         try {
             while (true) {
             	// Abre el socket y acepta las conexiones
@@ -34,6 +37,15 @@ public class SampleServer {
                         
                         //System.out.println(input);
                      NmeatoJson.SepararToken(input);
+                     if(moduloPromedio==9)
+                     {
+                    	 moduloPromedio=0;
+                    	 promedios= Operaciones.promedioCoor(NmeatoJson.getLastCoor());
+                    	 latiprom=promedios[0];
+                    	 longprom=promedios[1];
+                    	 System.out.println("promedios: "+ latiprom+","+longprom);
+                     }
+                     else moduloPromedio++;
                     }
                 } finally {
                     socket.close();

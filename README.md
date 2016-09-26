@@ -8,3 +8,5 @@ para manejar los nuevos conceptos a usar en las aplicaciones objetivo
 --> El proyecto ejemplo-sheduler es una aplicacion en la cual se muestra como programar un ejecutable que realiza una tarea generica cada x tiempo
 
 --> El proyecto CrunchifyRESTJerseyExample es un proyecto en el que se estudia la creacion de un servidor rest, y atraves de un cliente rest se consume uno o varios servicios que proporciona el servidor
+
+--> Rutasbuses1.0 es un Dinamic Web Project en el cual esta soportado la estructura backend del macroproyecto en el hay unos servicios destinados al desarrollo web y algunos para comunicarse con la infraestructura embebida, tambien en adicion al trabajo de mis compañeros se agregaron unos clientes Restful que consumen un servicio para enviar datos de coordenadas 
